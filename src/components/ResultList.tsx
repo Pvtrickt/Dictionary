@@ -7,17 +7,14 @@ import Antonymlist from "./AntonymList";
 import Pronounciation from "./Pronounciation";
 import SaveWordsBtn from "./SaveWordBtn";
 
-// export const CursorState = createContext({});
-
 axios.defaults.baseURL = "https://api.dictionaryapi.dev/api/v2/entries/en";
 
 const ResultList = () => {
   const { inputValue, onScreenContent, setOnScreenContent }: any =
     useContext(InputContext);
-  const [response, setResponse] = useState(null);
-  const [error, setError] = useState("");
+  const [response, setResponse] = useState<any>(null);
+  const [error, setError] = useState<any>("");
   const [loading, setLoading] = useState(false);
-  // const [isHovered, setIsHovered] = useState(false);
 
   const fetchData = async (param: any) => {
     try {
@@ -71,7 +68,6 @@ const ResultList = () => {
             </div>
 
             <div className=" border-l-[#4355ab] w-1/3 border-l-2 p-20 flex  flex-col space-y-5">
-              {/* <CursorState.Provider value={{ isHovered, setIsHovered }}> */}
               <div>
                 <h4 className="text-[#4355ab] text-3xl underline">Synonyms:</h4>
                 <SynonymList synonyms={getSynonyms(response)} />
@@ -80,7 +76,6 @@ const ResultList = () => {
                 <h4 className="text-[#4355ab] text-3xl underline">Antonyms:</h4>
                 <Antonymlist antonyms={getAntonyms(response)} />
               </div>
-              {/* </CursorState.Provider> */}
             </div>
           </div>
         )}

@@ -5,6 +5,7 @@ import SavedWords from "./SavedWords";
 const Searchbar = () => {
   const { setInputValue, onScreenContent, setOnScreenContent }: any =
     useContext(InputContext);
+
   const [value, setValue] = useState("");
 
   const handleInputChange = (e: any) => {
@@ -25,7 +26,7 @@ const Searchbar = () => {
   };
 
   const BackToSearch = () => {
-    setOnScreenContent("maximiseSearchBar");
+    setOnScreenContent("minimiseSearchBar");
   };
 
   if (onScreenContent === "minimiseSearchBar") {
