@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { InputContext } from "../App";
 import axios from "axios";
 import MeaningList from "./MeaningList";
@@ -10,11 +10,17 @@ import SaveWordsBtn from "./SaveWordBtn";
 axios.defaults.baseURL = "https://api.dictionaryapi.dev/api/v2/entries/en";
 
 const ResultList = () => {
-  const { inputValue, onScreenContent, setOnScreenContent }: any =
-    useContext(InputContext);
-  const [response, setResponse] = useState<any>(null);
-  const [error, setError] = useState<any>("");
-  const [loading, setLoading] = useState(false);
+  const {
+    inputValue,
+    onScreenContent,
+    setOnScreenContent,
+    response,
+    setResponse,
+    error,
+    setError,
+    loading,
+    setLoading,
+  }: any = useContext(InputContext);
 
   const fetchData = async (param: any) => {
     try {

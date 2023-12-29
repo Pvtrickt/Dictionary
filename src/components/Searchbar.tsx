@@ -3,7 +3,7 @@ import { InputContext } from "../App";
 import SavedWords from "./SavedWords";
 
 const Searchbar = () => {
-  const { setInputValue, onScreenContent, setOnScreenContent }: any =
+  const { setInputValue, onScreenContent, setOnScreenContent, response }: any =
     useContext(InputContext);
 
   const [value, setValue] = useState("");
@@ -26,7 +26,11 @@ const Searchbar = () => {
   };
 
   const BackToSearch = () => {
-    setOnScreenContent("minimiseSearchBar");
+    if (response) {
+      setOnScreenContent("minimiseSearchBar");
+    } else {
+      setOnScreenContent("maximiseSearchBar");
+    }
   };
 
   if (onScreenContent === "minimiseSearchBar") {

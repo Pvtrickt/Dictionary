@@ -11,6 +11,9 @@ function App() {
   const [inputValue, setInputValue] = useState("");
   const [isHovered, setIsHovered] = useState(false);
   const [onScreenContent, setOnScreenContent] = useState("maximiseSearchBar");
+  const [response, setResponse] = useState<any>(null);
+  const [error, setError] = useState<any>("");
+  const [loading, setLoading] = useState(false);
 
   return (
     <InputContext.Provider
@@ -19,6 +22,12 @@ function App() {
         setInputValue,
         onScreenContent,
         setOnScreenContent,
+        response,
+        setResponse,
+        error,
+        setError,
+        loading,
+        setLoading,
       }}
     >
       <CursorState.Provider value={{ isHovered, setIsHovered }}>
