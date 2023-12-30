@@ -6,15 +6,17 @@ import { CursorState } from "../App";
 
 const SavedWords = () => {
   const { wordList, removeFromWordList } = useSavedWordsInfo();
-  const { setInputValue }: any = useContext(InputContext);
+  const { inputValue, setInputValue, setOnScreenContent }: any =
+    useContext(InputContext);
   const { isHovered, setIsHovered }: any = useContext(CursorState);
 
-  // const handleDelete = (savedItem: string) => {
-  // removeFromWordList(savedItem);
-  // };
-
   const handleSavedWordClick = (savedItem: any) => {
-    setInputValue(savedItem);
+    // this function is for the user to access the results of a savedItem that they were previously just on.
+    if (savedItem == inputValue) {
+      setOnScreenContent("minimiseSearchBar");
+    } else {
+      setInputValue(savedItem);
+    }
   };
 
   const handleMouseOver = () => {
