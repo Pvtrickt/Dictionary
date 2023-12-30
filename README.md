@@ -1,6 +1,6 @@
 # React + TypeScript + Vite and my first-ever solo project!
 
-This is a Dictionary web app that I've made (and why it is so important to me).
+## This is a Dictionary web app that I've made (and why it is so important to me).
 
 The purpose of this project was for me to refresh my knowledge of how to use React after taking a 3-month break from my first front-end web development internship. 
 
