@@ -60,7 +60,7 @@ const ResultList = () => {
       <div>
         {response && onScreenContent !== "savedWords" && (
           <div className=" h-screen w-screen flex bg-[#FBEAEB]">
-            <div className="text-[#4355ab] w-2/3 p-20">
+            <div className="text-[#4355ab] w-2/3 p-20 h-auto border-r-[#4355ab] border-r-2 overflow-y-auto">
               <div className="text-6xl border-b-2 border-b-[#4355ab] pb-5 flex flex-row gap-5">
                 <h3>{lowerCase}</h3>
                 <Pronounciation word={response} />
@@ -73,7 +73,7 @@ const ResultList = () => {
               <MeaningList mean={response} />
             </div>
 
-            <div className=" border-l-[#4355ab] w-1/3 border-l-2 p-20 flex  flex-col space-y-5">
+            <div className=" w-1/3 p-20 flex  flex-col space-y-5">
               <div>
                 <h4 className="text-[#4355ab] text-3xl underline">Synonyms:</h4>
                 <SynonymList synonyms={getSynonyms(response)} />
